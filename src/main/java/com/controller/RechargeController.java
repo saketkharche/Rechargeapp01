@@ -48,7 +48,11 @@ public class RechargeController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 	
+		String requestMethod = request.getMethod();
 
+		if (requestMethod != "GET") {
+		    throw new ServletException("The request method is not GET.");
+		}
 		
 //		int otp=Integer.parseInt(request.getParameter("inputotp"));
 //		
